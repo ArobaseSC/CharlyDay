@@ -14,6 +14,13 @@ class CartManager
         }
     }
 
+    public static function destroyCart(): void
+    {
+        if (self::hasSavedCart()) {
+            unset($_SESSION['cart']);
+        }
+    }
+
     public static function saveCart(): void
     {
         $_SESSION['cart'] = serialize(self::$liste);

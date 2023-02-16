@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Application\dispatch;
 
 use Application\action\AboutAction;
+use Application\action\ActionAccueil;
 use Application\action\AddStarAction;
 use Application\action\CompteAction;
 use Application\action\InscriptionAction;
@@ -84,13 +85,11 @@ class Dispatcher
                 $act = new AddStarAction();
                 $act->execute();
                 break;
-            case 'compte':
-                $act = new CompteAction();
+            default:
+                $act = new ActionAccueil();
                 $act->execute();
                 break;
-            default:
-                header('Location: ?action=shop');
-                break;
+
         }
 
     }
