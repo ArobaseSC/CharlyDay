@@ -67,13 +67,13 @@
             <div class="attr-nav">
                 <ul>
                     <li class="menu-icon">
-                            <a href="login.html">
-                                <i class="fa fa-user"></i>
-                                <p>Mon Compte</p>
-                            </a>
-                        </li>
+                        <a href="?action=conn_log">
+                            <i class="fa fa-user"></i>
+                            <p>Mon Compte</p>
+                        </a>
+                    </li>
                     <li class="side-menu menu-icon"><a href="#">
-                            <i class="fa fa-shopping-bag"></i>
+                        <i class="fa fa-shopping-bag"></i>
 
                             <?php
                                 use Application\manager\CartManager;
@@ -83,7 +83,7 @@
                                 echo "<span class='badge'>$len</span>"
                             ?>
                             <p>Mon Panier</p>
-                        </a></li>
+                    </a></li>
                 </ul>
             </div>
             <!-- End Atribute Navigation -->
