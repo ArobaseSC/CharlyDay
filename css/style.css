@@ -1097,24 +1097,25 @@
     visibility: hidden;
     font-size: 30px;
     cursor: pointer;
-    margin-left:auto;
-    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
   
-  .star::before {
+  .star input::before {
     content: "\2605";
     position: absolute;
     visibility: visible;
     color: yellow;
   }
   
-  .star:checked::before {
+  .star input:checked::before {
     content: "\2606";
     position: absolute;
     color: white;
   }
   
-  .star:hover::before {
+  .star input:hover::before {
     color: yellow;
   }
 
