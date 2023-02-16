@@ -1,0 +1,124 @@
+
+.emailControl {
+    position: relative;
+}
+
+#title {
+    margin-top: 0;
+}
+
+label {
+    cursor: default;
+    opacity: 1;
+}
+
+.connexion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*broken*/
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 9px;
+    width: 249px;
+    height: 300px;
+    padding: 68px 68px 40px;
+}
+
+.register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 9px;
+    width: 249px;
+    height: 315px;
+    padding: 68px 68px 68px;
+}
+
+.textfield {
+    background: #333;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 7%;
+    padding: 0% 5% 0;
+    width: 100%;
+    opacity: 1;
+    appearance: none;
+    box-sizing: border-box;
+    display: block;
+    font-size: 16px;
+}
+
+.buttonControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.btnConnect {
+    height: 50px;
+    margin: 24px 0 12px;
+    padding: 16px;
+    width: 80%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    background-color: #FF0303FF;
+}
+
+.btnForget {
+    height: 60px;
+    margin: 24px 0 12px;
+    padding: 16px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    background-color: #FF0303FF;
+}
+
+.token {
+    color: red;
+}
+
+.btnRegister {
+    height: 50px;
+    margin: 24px 0 12px 0;
+    padding: 16px;
+    width: 80%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    background-color: #FF0303FF;
+}
+
+.Signup {
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
