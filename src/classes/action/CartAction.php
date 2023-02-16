@@ -11,6 +11,7 @@ class CartAction extends Action
     {
 
         require_once 'src/views/Header.php';
+        require_once 'src/views/EarlyCart.php';
 
         $html = <<< HEAD
             <!-- Start Cart  -->
@@ -24,9 +25,9 @@ class CartAction extends Action
                                         <tr>
                                             <th></th>
                                             <th>Nom du produit</th>
-                                            <th>Prix à l'unité</th>
+                                            <th>Prix (à l'unité/par kg)</th>
                                             <th>Quantité</th>
-                                            <th>Prix</th>
+                                            <th>Prix final</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -44,9 +45,12 @@ HEAD;
             if($pr->poids == 0){
                 $prix = $pr->prix * ($qte / 1000);
                 $refQte = "grammes";
+                $refPrix = "/ kg";
             } else {
                 $prix = $pr->prix * $qte;
                 $refQte = "unité(s)";
+                $refPrix = "/ unité";
+
             }
 
             $prixTotal += $prix;
@@ -57,15 +61,14 @@ HEAD;
             // nom
             $html .= "<td class='name-pr'><a href='#'>$pr->nom</a></td>";
             // prix
-            $html .= "<td class='price-pr'><p>$pr->prix €</p></td>";
+            $html .= "<td class='price-pr'><p>$pr->prix € $refPrix</p></td>";
             // qte
                 $html .= "<td class='price-pr'><p>$qte $refQte</p></td>";
             // total (qte * prix)
             $html .= "<td class='total-pr'><p>$prix €</p></td>";
             // delete
-            $html .= "<td class='remove-pr'><a href=''#'><i class='fas fa-times'></i></a></td>";
+            $html .= "<td class='remove-pr'><a href='?action=remove_cart&id_product=$pr->id'><i class='fas fa-times'></i></a></td>";
             $html .= "</tr>";
-
 
         }
 
@@ -94,7 +97,6 @@ HEAD;
             </div>
             <!-- End Cart -->
         HEAD;
-
 
         echo $html;
 

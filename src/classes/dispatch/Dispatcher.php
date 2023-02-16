@@ -9,6 +9,7 @@ use Application\action\LoginAction;
 use Application\action\AddCartAction;
 use Application\action\CartAction;
 
+use Application\action\RemoveCartAction;
 use Application\action\ViewProductAction;
 
 use Application\action\ShopAction;
@@ -50,6 +51,10 @@ class Dispatcher
                 break;
             case 'add_cart':
                 $act = new AddCartAction();
+                $act->execute();
+                break;
+            case 'remove_cart':
+                $act = new RemoveCartAction();
                 $act->execute();
                 break;
             default:
