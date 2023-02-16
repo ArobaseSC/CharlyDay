@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Application\dispatch;
 
+use Application\action\LoginAction;
 use Application\action\ViewProductAction;
 
 use Application\action\ShopAction;
@@ -31,6 +32,10 @@ class Dispatcher
 
             case 'view_product':
                 $act = new ViewProductAction();
+                $act->execute();
+                break;
+            case 'login':
+                $act = new LoginAction();
                 $act->execute();
                 break;
             default:
