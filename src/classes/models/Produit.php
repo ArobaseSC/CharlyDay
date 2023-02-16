@@ -25,4 +25,9 @@ class Produit extends Eloquent\Model
                 ->withPivot(['id_comm', 'date_comm', 'quantite']);
     }
 
+    function esrFavoris(){
+        return $this->belongsToMany('Application\models\User', 'favoris', 'id', 'id_user');
+    }
+
+
 }

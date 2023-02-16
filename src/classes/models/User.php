@@ -17,4 +17,8 @@ class User extends Eloquent\Model
                 ->withPivot(['id_comm', 'date_comm', 'quantite']);
     }
 
+    function favoris(){
+        return $this->belongsToMany('Application\models\Produit', 'favoris', 'id_user', 'id');
+    }
+
 }
