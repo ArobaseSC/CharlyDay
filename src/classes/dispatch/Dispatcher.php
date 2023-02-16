@@ -84,8 +84,12 @@ class Dispatcher
                 $act = new AddStarAction();
                 $act->execute();
                 break;
+            case 'compte':
+                $act = new CompteAction();
+                $act->execute();
+                break;
             default:
-                $html ='';
+                header('Location: ?action=shop');
                 break;
         }
 

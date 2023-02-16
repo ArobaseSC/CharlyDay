@@ -2,7 +2,7 @@
 
 namespace Application\action;
 
-use Application\identity\model\Produit;
+use Application\models\Produit;
 use Application\manager\CartManager;
 
 class AddCartAction extends Action
