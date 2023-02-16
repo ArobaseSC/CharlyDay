@@ -10,6 +10,6 @@ class Categorie extends Eloquent\Model{
 
 
     function produits(){
-        return $this->hasMany('Application\identity\model\Produit', 'id');
+        return $this->hasMany('Application\identity\model\Produit', 'categorie');
     }
 }
