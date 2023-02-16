@@ -62,7 +62,7 @@ class ShopAction extends Action
                             
 
                             <div role="tabpanel" class="tab-pane fade show active" id="list-view">
-               END;
+END;
 
         $produits = $produits->get()->skip($page * 5)->take(5);
 
@@ -80,7 +80,8 @@ class ShopAction extends Action
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist">Ajouter au panier</a></li>
-                                                                <li><a href="?action=add-star&id_produit={$produit->id}" class="star" type="checkbox" checked></a></li>
+                                                                
+                                                                <li><a href="?action=add-star&id_produit={$produit->id}" class="star"><input type="checkbox" checked></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
