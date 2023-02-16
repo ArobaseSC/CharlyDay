@@ -28,6 +28,7 @@ class CartAction extends Action
                                             <th>Prix (à l'unité/par kg)</th>
                                             <th>Quantité</th>
                                             <th>Prix final</th>
+                                            <th>Empreinte carbone</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -37,23 +38,25 @@ class CartAction extends Action
         CartManager::loadCart();
         $carts = CartManager::getCart();
         $prixTotal = 0;
-        foreach($carts as $cart){
+        foreach ($carts as $cart) {
 
             $pr = $cart->__get('produit');
             $qte = $cart->__get('quantite');
 
-            if($pr->poids == 0){
+            if ($pr->poids == 0) {
                 $prix = $pr->prix * ($qte / 1000);
                 $refQte = "grammes";
                 $refPrix = "/ kg";
+                $empreinte = $pr->distance * ($qte / 1000);
             } else {
                 $prix = $pr->prix * $qte;
                 $refQte = "unité(s)";
                 $refPrix = "/ unité";
-
+                $empreinte = $pr->distance * $pr->poids;
             }
 
             $prixTotal += $prix;
+
 
             $html .= "<tr>";
             // image
@@ -63,16 +66,18 @@ class CartAction extends Action
             // prix
             $html .= "<td class='price-pr'><p>$pr->prix € $refPrix</p></td>";
             // qte
-                $html .= "<td class='price-pr'><p>$qte $refQte</p></td>";
+            $html .= "<td class='price-pr'><p>$qte $refQte</p></td>";
             // total (qte * prix)
             $html .= "<td class='total-pr'><p>$prix €</p></td>";
+            // empreinte carbone
+            $html .= "<td class='total-pr'><p>$empreinte</p></td>";
             // delete
             $html .= "<td class='remove-pr'><a href='?action=remove_cart&id_product=$pr->id'><i class='fas fa-times'></i></a></td>";
             $html .= "</tr>";
 
         }
 
-         $html .= <<< HEAD
+        $html .= <<< HEAD
                                     </tbody>
                                 </table>
                             </div>
