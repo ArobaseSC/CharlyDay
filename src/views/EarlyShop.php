@@ -22,14 +22,7 @@
                 <div class="right-product-box">
                     <div class="product-item-filter row">
                         <div class="col-12 col-sm-8 text-center text-sm-left">
-                            <div class="toolbar-sorter-right">
-                                <span>Trier par </span>
-                                <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                                    <option data-display="Select">Aucun</option>
-                                    <option value="1">Prix Bas -> Prix Haut</option>
-                                    <option value="2">Prix Haut → Prix Bas</option>
-                                </select>
-                            </div>
+
 
 
 

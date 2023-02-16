@@ -28,7 +28,21 @@ class ShopAction extends Action
             $numCategorie = 0;
         }
 
+        $tri = $_GET['tri'] ?? 0;
+        try {
+            $tri = (int)$tri;
+        } catch (\Exception $e) {
+            $tri = 0;
+        }
+
+        $temp = '';
+
+        if ($tri != 0) {
+            $temp .= '&tri=' . $tri;
+        }
+
         if ($numCategorie != 0) {
+            $temp .= '&categorie=' . $numCategorie;
             $categorie = Categorie::where('id', $numCategorie)->first();
             $produits = $categorie->produits();
             $nbProduits = $categorie->produits()->count();
@@ -38,10 +52,34 @@ class ShopAction extends Action
         }
 
         if (isset($_GET['searchBar'])) {
+            $temp .= '&searchBar=' . $_GET['searchBar'];
             $produits = $produits->where('nom', 'like', '%' . $_GET['searchBar'] . '%')
                 ->orWhere('description', 'like', '%' . $_GET['searchBar'] . '%')
                 ->orWhere('lieu', 'like', '%' . $_GET['searchBar'] . '%');
             $nbProduits = $produits->count();
+        }
+
+        $triSelect = <<<END
+                            <div class="toolbar-sorter-right">
+                                <span>Trier par </span>
+                                <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                                    <option name="tri" value="0" data-display="Select">Aucun</option>
+                                    <option  name="tri" value="1"><a href="?action=shop&tri=1">Prix Bas -> Prix Haut</a></option>
+                                    <option  name="tri" value="2">Prix Haut → Prix Bas</option>
+                                    <option  name="tri" value="3">Nom A → Z</option>
+                                    <option  name="tri" value="4">Nom Z → A</option>
+                                </select>
+                            </div>
+                END;
+
+        if ($tri == 1) {
+            $produits = $produits->orderBy('prix', 'asc');
+        } else if ($tri == 2) {
+            $produits = $produits->orderBy('prix', 'desc');
+        } else if ($tri == 3) {
+            $produits = $produits->orderBy('nom', 'asc');
+        } else if ($tri == 4) {
+            $produits = $produits->orderBy('nom', 'desc');
         }
 
         $nbMaxPages = ceil($nbProduits / 5);
@@ -175,6 +213,8 @@ END;
                     END;
 
 
+        echo $triSelect;
+
         if ($nbMaxPages > 1) {
             $pagination = '<ul class="pagination">';
             $pagination .= "<li class='page-item ";
@@ -182,7 +222,7 @@ END;
                 $pagination .= "disabled";
             }
             $pageMoinsUn = $page - 1;
-            $pagination .= "'><a class='page-link' href='?action=shop&page={$pageMoinsUn}'>Précédent</a></li>";
+            $pagination .= "'><a class='page-link' href='?action=shop{$temp}&page={$pageMoinsUn}'>Précédent</a></li>";
 
             for ($i = 0; $i < $nbMaxPages; $i++) {
                 $pagination .= "<li class='page-item ";
@@ -190,14 +230,15 @@ END;
                     $pagination .= "active";
                 }
                 $iPlusUn = $i + 1;
-                $pagination .= "'><a class='page-link' href='?action=shop&page={$i}'>{$iPlusUn}</a></li>";
+                $pagination .= "'><a class='page-link' href='?action=shop{$temp}&page={$i}'>{$iPlusUn}</a></li>";
             }
 
             $pagination .= "<li class='page-item ";
             if ($page + 1 >= $nbMaxPages) {
+                $pagination .= "disabled";
             }
             $pagePlusUn = $page + 1;
-            $pagination .= "'><a class='page-link' href='?action=shop&page={$pagePlusUn}'>Suivant</a></li>";
+            $pagination .= "'><a class='page-link' href='?action=shop{$temp}&page={$pagePlusUn}'>Suivant</a></li>";
 
             $pagination .= '</div>';
             echo $pagination;
