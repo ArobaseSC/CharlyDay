@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Application\dispatch;
 
 use Application\action\AboutAction;
-use Application\action\AddStarAction;
+use Application\action\CompteAction;
 use Application\action\InscriptionAction;
 use Application\action\LogConnAction;
 use Application\action\LoginAction;
@@ -14,6 +14,7 @@ use Application\action\AddCartAction;
 use Application\action\CartAction;
 
 use Application\action\RemoveCartAction;
+use Application\action\ValidateCart;
 use Application\action\ViewProductAction;
 
 use Application\action\ShopAction;
@@ -40,6 +41,10 @@ class Dispatcher
             case 'about-us':
                 $action = new AboutAction();
                 $action->execute();
+                break;
+            case 'compte':
+                $act = new CompteAction();
+                $act->execute();
                 break;
 
             case 'view_product':
@@ -70,8 +75,8 @@ class Dispatcher
                 $act = new RemoveCartAction();
                 $act->execute();
                 break;
-            case 'add-star':
-                $act = new AddStarAction();
+            case 'checkout':
+                $act = new ValidateCart();
                 $act->execute();
                 break;
             default:

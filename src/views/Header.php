@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>CourCircuit - Click&Collect</title>
+    <title>Court Circuit - Click&Collect</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -66,8 +66,14 @@
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
                 <ul>
-                    <li class="side-menu"><a href="#">
-                            <i class="fa fa-shopping-bag"></i>
+                    <li class="menu-icon">
+                        <a href="?action=conn_log">
+                            <i class="fa fa-user"></i>
+                            <p>Mon Compte</p>
+                        </a>
+                    </li>
+                    <li class="side-menu menu-icon"><a href="#">
+                        <i class="fa fa-shopping-bag"></i>
 
                             <?php
                                 use Application\manager\CartManager;
@@ -77,17 +83,9 @@
                                 echo "<span class='badge'>$len</span>"
                             ?>
                             <p>Mon Panier</p>
-                        </a></li>
-                        <li class="side-menu">
-                            <a href="?action=conn_log">
-                                <i class="fa fa-user"></i>
-                                <p>Mon Compte</p>
-                            </a>
-                        </li>
+                    </a></li>
                 </ul>
             </div>
-
-
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
