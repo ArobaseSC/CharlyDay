@@ -21,12 +21,12 @@ class Produit extends Eloquent\Model
     function commande()
     {
         return
-            $this->belongsToMany('Application\models\User', 'commande', 'id', 'id_user')
+            $this->belongsToMany('Application\models\User', 'commande', 'id_prod', 'id_user')
                 ->withPivot(['id_comm', 'date_comm', 'quantite']);
     }
 
-    function esrFavoris(){
-        return $this->belongsToMany('Application\models\User', 'favoris', 'id', 'id_user');
+    function estFavoris(){
+        return $this->belongsToMany('Application\models\User', 'favoris', 'id_prod', 'id_user');
     }
 
 
