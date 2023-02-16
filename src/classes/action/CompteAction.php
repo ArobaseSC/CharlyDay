@@ -2,6 +2,7 @@
 
 namespace Application\action;
 
+use Application\models\Produit;
 use Application\models\User;
 
 class CompteAction extends Action
@@ -57,6 +58,8 @@ END;
                 </li>   
 END;
             }
+
+            // on recupere les commandes de l'utilisateur
             $html.= <<<END
                 </div>
                 <div class="order-history">
@@ -66,18 +69,37 @@ END;
                         <tr>
                           <th>Date</th>
                           <th>Produit</th>
+                          <th>Quantité</th>
                           <th>Prix</th>
                         </tr>
                       </thead>
                 <tbody>
 END;
-            $html.= <<<END
+        $commandes = $user->commande()->get();
+
+        foreach ($commandes as $commande){
+                // on recupere les produits de la commandes
+                $produit = Produit::where('id', '=', $commande->id)->first();
+                // on regroupe tout par produit
+                    if ($produit->poids === 0) {
+                        $montant = ($produit->prix) * (($commande->pivot->quantite)/1000);
+                        $prix = "{$montant}€";
+                    } else {
+                        $montant = $produit->prix * $commande->pivot->quantite;
+                        $prix = "{$montant}€";
+                    }
+                    $html.= <<<END
                     <tr>
-                        <td>01/01/2022</td>
-                        <td>Produit 1</td>
-                        <td>49.99 $</td>
+                        <td>{$commande->pivot->date_comm}</td>
+                        <td>$produit->nom</td>
+                        <td>{$commande->pivot->quantite}</td>
+                        <td>$prix</td>
                     </tr>
 END;
+
+
+            }
+
             $html.= <<<END
                 </tbody>
             </table>
