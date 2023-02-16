@@ -23,7 +23,6 @@ class CartAction extends Action
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th></th>
                                             <th>Nom du produit</th>
                                             <th>Prix (à l'unité/par kg)</th>
                                             <th>Quantité</th>
@@ -60,7 +59,6 @@ HEAD;
 
             $html .= "<tr>";
             // image
-            $html .= "<td class='thumbnail-img'><a href='#'><img class='img-fluid' src='images/$pr->id.jpg' alt=''/></a></td>";
             // nom
             $html .= "<td class='name-pr'><a href='#'>$pr->nom</a></td>";
             // prix
@@ -70,7 +68,7 @@ HEAD;
             // total (qte * prix)
             $html .= "<td class='total-pr'><p>$prix €</p></td>";
             // empreinte carbone
-            $html .= "<td class='total-pr'><p>$empreinte</p></td>";
+            $html .= "<td class='total-pr'><p>$empreinte g CO2e</p></td>";
             // delete
             $html .= "<td class='remove-pr'><a href='?action=remove_cart&id_product=$pr->id'><i class='fas fa-times'></i></a></td>";
             $html .= "</tr>";
