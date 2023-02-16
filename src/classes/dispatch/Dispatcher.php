@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Application\dispatch;
 
+use Application\action\ShopAction;
+
 class Dispatcher
 {
     private ?string $action = null;
@@ -21,21 +23,15 @@ class Dispatcher
         switch ($this->action) {
 
             case 'shop':
-                $html = 'shop';
+                $action = new ShopAction();
+
+                $html = $action->execute();
+
                 break;
 
             default:
                 $html ='';
                 break;
         }
-
-        $this->render($html);
     }
-
-
-    private function render(string $template): void
-    {
-
-    }
-
 }

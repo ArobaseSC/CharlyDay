@@ -8,9 +8,9 @@ use Application\datalayer\factory\ConnectionFactory;
 use Application\exception\datalayer\DatabaseConnectionException;
 use Application\exception\identity\AuthenticationException;
 use Application\exception\identity\BadPasswordException;
-use Application\identity\model\User;
 use PDO;
 use PDOException;
+use User;
 
 
 class AuthenticationIdentityService
