@@ -68,15 +68,26 @@
                 <ul>
                     <li class="side-menu"><a href="#">
                             <i class="fa fa-shopping-bag"></i>
-                            <span class="badge">3</span>
+
+                            <?php
+                                use Application\manager\CartManager;
+
+                                CartManager::loadCart();
+                                $len = count(CartManager::getCart());
+                                echo "<span class='badge'>$len</span>"
+                            ?>
                             <p>Mon Panier</p>
                         </a></li>
+                        <li class="side-menu">
+                            <a href="?action=conn_log">
+                                <i class="fa fa-user"></i>
+                                <p>Mon Compte</p>
+                            </a>
+                        </li>
                 </ul>
             </div>
 
-            <div class="login">
-                <a href="?action=login"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="color: black"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg></a>
-            </div>
+
             <!-- End Atribute Navigation -->
         </div>
         <!-- Start Side Menu -->
@@ -84,25 +95,57 @@
             <a href="#" class="close-side"><i class="fa fa-times"></i></a>
             <li class="cart-box">
                 <ul class="cart-list">
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Delica omtantur </a></h6>
-                        <p>1x - <span class="price">$80.00</span></p>
+
+                    <?php
+
+                    CartManager::loadCart();
+                    $carts = CartManager::getCart();
+
+                    $prixTotal = 0;
+                    $html = "";
+                    foreach ($carts as $cart) {
+
+                        $pr = $cart->__get('produit');
+                        $qte = $cart->__get('quantite');
+
+                        if ($pr->poids == 0) {
+                            $prix = $pr->prix * ($qte / 1000);
+                            $refQte = "grammes";
+                            $refPrix = "/ kg";
+                            $empreinte = $pr->distance * ($qte / 1000);
+                        } else {
+                            $prix = $pr->prix * $qte;
+                            $refQte = "unité(s)";
+                            $refPrix = "/ unité";
+                            $empreinte = $pr->distance * $pr->poids;
+                        }
+
+                        $prixTotal += $prix;
+
+
+                        $html .= "<li>";
+                        // image
+                        $html .= "<a href='#' class='photo'><img src='images/$pr->id.jpg' class='cart-thumb' alt='' /></a>";
+                        // nom
+                        $html .= "<h6><a href='#'>$pr->nom </a></h6>";
+                        // prix
+                        $html .= "<p>$qte $refQte - <span class='price'>$prix €</span></p>";
+                        $html .= "</li>";
+
+                    }
+
+
+                    $html .= <<< HEAD
+                        <li class="total">
+                        <a href="?action=cart" class="btn btn-default hvr-hover btn-cart">Voir le panier</a>
+                        <span class="float-right"><strong>Total</strong>: $prixTotal €</span>
                     </li>
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Omnes ocurreret</a></h6>
-                        <p>1x - <span class="price">$60.00</span></p>
-                    </li>
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Agam facilisis</a></h6>
-                        <p>1x - <span class="price">$40.00</span></p>
-                    </li>
-                    <li class="total">
-                        <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                        <span class="float-right"><strong>Total</strong>: $180.00</span>
-                    </li>
+                    HEAD;
+
+                    echo $html;
+
+                    ?>
+
                 </ul>
             </li>
         </div>

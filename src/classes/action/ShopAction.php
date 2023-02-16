@@ -40,10 +40,7 @@ class ShopAction extends Action
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist">Ajouter au panier</a></li>
-                                                                <form method="post" action="?action=favourite&callback={$_SERVER['QUERY_STRING']}">
-                                                                   <li style="text-align: center"><input href="" id="star2" class="star" type="checkbox" title="bookmark page" checked><br/><br</li>
-                                                                </form>
-                                                                
+                                                                <li><a href="?action=add-star" class="star" type="checkbox" checked></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>

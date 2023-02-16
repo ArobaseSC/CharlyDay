@@ -23,11 +23,11 @@ class CartAction extends Action
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th></th>
                                             <th>Nom du produit</th>
                                             <th>Prix (à l'unité/par kg)</th>
                                             <th>Quantité</th>
                                             <th>Prix final</th>
+                                            <th>Empreinte carbone</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -37,42 +37,45 @@ HEAD;
         CartManager::loadCart();
         $carts = CartManager::getCart();
         $prixTotal = 0;
-        foreach($carts as $cart){
+        foreach ($carts as $cart) {
 
             $pr = $cart->__get('produit');
             $qte = $cart->__get('quantite');
 
-            if($pr->poids == 0){
+            if ($pr->poids == 0) {
                 $prix = $pr->prix * ($qte / 1000);
                 $refQte = "grammes";
                 $refPrix = "/ kg";
+                $empreinte = $pr->distance * ($qte / 1000);
             } else {
                 $prix = $pr->prix * $qte;
                 $refQte = "unité(s)";
                 $refPrix = "/ unité";
-
+                $empreinte = $pr->distance * $pr->poids;
             }
 
             $prixTotal += $prix;
 
+
             $html .= "<tr>";
             // image
-            $html .= "<td class='thumbnail-img'><a href='#'><img class='img-fluid' src='images/$pr->id.jpg' alt=''/></a></td>";
             // nom
             $html .= "<td class='name-pr'><a href='#'>$pr->nom</a></td>";
             // prix
             $html .= "<td class='price-pr'><p>$pr->prix € $refPrix</p></td>";
             // qte
-                $html .= "<td class='price-pr'><p>$qte $refQte</p></td>";
+            $html .= "<td class='price-pr'><p>$qte $refQte</p></td>";
             // total (qte * prix)
             $html .= "<td class='total-pr'><p>$prix €</p></td>";
+            // empreinte carbone
+            $html .= "<td class='total-pr'><p>$empreinte g CO2e</p></td>";
             // delete
             $html .= "<td class='remove-pr'><a href='?action=remove_cart&id_product=$pr->id'><i class='fas fa-times'></i></a></td>";
             $html .= "</tr>";
 
         }
 
-         $html .= <<< HEAD
+        $html .= <<< HEAD
                                     </tbody>
                                 </table>
                             </div>

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Application\dispatch;
 
-use Application\action\CompteAction;
+use Application\action\AboutAction;
+use Application\action\InscriptionAction;
+use Application\action\LogConnAction;
 use Application\action\LoginAction;
 
 use Application\action\AddCartAction;
@@ -30,13 +32,12 @@ class Dispatcher
     final public function dispatch(): void
     {
         switch ($this->action) {
-            case 'login':
-                $act = new LoginAction();
-                $act->execute();
-                break;
-
             case 'shop':
                 $action = new ShopAction();
+                $action->execute();
+                break;
+            case 'about-us':
+                $action = new AboutAction();
                 $action->execute();
                 break;
 
@@ -44,18 +45,24 @@ class Dispatcher
                 $act = new ViewProductAction();
                 $act->execute();
                 break;
+            case 'conn_log':
+                $act = new LogConnAction();
+                $act->execute();
+                break;
             case 'login':
                 $act = new LoginAction();
+                $act->execute();
+                break;
+            case 'inscription':
+                $act = new InscriptionAction();
+                $act->execute();
+                break;
             case 'cart':
                 $act = new CartAction();
                 $act->execute();
                 break;
             case 'add_cart':
                 $act = new AddCartAction();
-                $act->execute();
-                break;
-            case 'compte':
-                $act = new CompteAction();
                 $act->execute();
                 break;
             case 'remove_cart':
