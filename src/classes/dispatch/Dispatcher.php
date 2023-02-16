@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Application\dispatch;
 
 use Application\action\LoginAction;
+
 use Application\action\AddCartAction;
 use Application\action\CartAction;
 
@@ -42,6 +43,8 @@ class Dispatcher
                 $act = new ViewProductAction();
                 $act->execute();
                 break;
+            case 'login':
+                $act = new LoginAction();
             case 'cart':
                 $act = new CartAction();
                 $act->execute();

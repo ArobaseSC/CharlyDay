@@ -14,14 +14,14 @@ class AddCartAction extends Action
         $id_product = $_GET['id_product'];
         $quantite = $_GET['quantite'];
 
-        $html = "ajout d'un produit dans le panier";
 
         CartManager::loadCart();
         $produit = Produit::where("id", "=", $id_product)->first();
         CartManager::addProduct($produit, $quantite);
         CartManager::saveCart();
 
-        echo $html;
+        // on va dans le panier
+        header("Location: ?action=cart");
 
     }
 
