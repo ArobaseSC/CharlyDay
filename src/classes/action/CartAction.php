@@ -31,7 +31,7 @@ class CartAction extends Action
                                         </tr>
                                     </thead>
                                     <tbody>
-            HEAD;
+HEAD;
 
         CartManager::loadCart();
         $carts = CartManager::getCart();
