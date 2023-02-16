@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
+                        <h1 class="m-b-20"><strong>Bienvenue au <br> CourtCircuit</strong></h1>
                         <p><a class="btn hvr-hover" href="?action=shop">Voir la boutique</a></p>
                     </div>
                 </div>
