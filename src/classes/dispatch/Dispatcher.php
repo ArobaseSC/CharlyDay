@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Application\dispatch;
 
+use Application\action\CompteAction;
 use Application\action\LoginAction;
 
 use Application\action\AddCartAction;
@@ -51,6 +52,10 @@ class Dispatcher
                 break;
             case 'add_cart':
                 $act = new AddCartAction();
+                $act->execute();
+                break;
+            case 'compte':
+                $act = new CompteAction();
                 $act->execute();
                 break;
             case 'remove_cart':
