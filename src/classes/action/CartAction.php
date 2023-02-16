@@ -63,9 +63,8 @@ class CartAction extends Action
             // total (qte * prix)
             $html .= "<td class='total-pr'><p>$prix €</p></td>";
             // delete
-            $html .= "<td class='remove-pr'><a href=''#'><i class='fas fa-times'></i></a></td>";
+            $html .= "<td class='remove-pr'><a href='?action=remove_cart&id_product=$pr->id'><i class='fas fa-times'></i></a></td>";
             $html .= "</tr>";
-
 
         }
 
