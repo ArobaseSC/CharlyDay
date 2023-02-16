@@ -75,7 +75,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
-                            <h4>A propos de CourCircuit</h4>
+                            <h4>A propos de Cour-Circuit</h4>
                             <p>Court-circuit est un lieu de vie associant épicerie et café/bar, permettant de trouver en un seul et même lieu et au juste prix des produits locaux, bio et vendus en vrac (c’est-à-dire sans emballages).</p> 
 							<p>Notre objectif est de promouvoir – par l’échange et la sensibilisation – l’agriculture et l’économie locale, de faciliter un mode de consommation responsable, de proposer un service accessible à tous·tes et de soutenir les producteurs et productrices qui se tournent vers l’agriculture biologique.</p> 
                             <p>Mais court-circuit est aussi votre lieu de vie : rencontre avec les producteur·trice·s locaux, les associations, ateliers zéro déchets, expositions … La communauté court-circuit permet l’échange, la formation, l’information, la découverte et le dialogue avec tous·tes les acteurs et actrices impliqué·e·s dans la transition écologique, l’économie sociale et solidaire.</p>				

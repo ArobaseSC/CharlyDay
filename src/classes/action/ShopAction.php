@@ -44,12 +44,15 @@ class ShopAction extends Action
             $nbProduits = $produits->count();
         }
 
-        if ($page + 1 > ceil($nbProduits / 5)) {
+        $nbMaxPages = ceil($nbProduits / 5);
+
+        if ($page + 1 > $nbMaxPages) {
             $page = floor($nbProduits / 5 - 1 );
         }
 
         $html = <<<END
-                            <p>{$nbProduits} Résultats</p>
+                            <div class="col-12 col-sm-4 text-center text-sm-right" style="max-width: 17%">
+                            <p style="width: 100px">{$nbProduits} Résultats</ps>
                             
                         </div> 
                     </div>
@@ -172,7 +175,35 @@ END;
                     END;
 
 
+        if ($nbMaxPages > 1) {
+            $pagination = '<ul class="pagination">';
+            $pagination .= "<li class='page-item ";
+            if ($page < 1) {
+                $pagination .= "disabled";
+            }
+            $pageMoinsUn = $page - 1;
+            $pagination .= "'><a class='page-link' href='?action=shop&page={$pageMoinsUn}'>Précédent</a></li>";
 
+            for ($i = 0; $i < $nbMaxPages; $i++) {
+                $pagination .= "<li class='page-item ";
+                if ($i == $page) {
+                    $pagination .= "active";
+                }
+                $iPlusUn = $i + 1;
+                $pagination .= "'><a class='page-link' href='?action=shop&page={$i}'>{$iPlusUn}</a></li>";
+            }
+
+            $pagination .= "<li class='page-item ";
+            if ($page + 1 >= $nbMaxPages) {
+            }
+            $pagePlusUn = $page + 1;
+            $pagination .= "'><a class='page-link' href='?action=shop&page={$pagePlusUn}'>Suivant</a></li>";
+
+            $pagination .= '</div>';
+            echo $pagination;
+        } else {
+            echo '</div>';
+        }
 
 
         echo $html;
