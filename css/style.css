@@ -731,6 +731,10 @@
  .top-search input.form-control{
      color: #ffffff;
 }
+
+ .login{
+        padding: 0px 15px;
+ }
 /*------------------------------------------------------------------ Slider -------------------------------------------------------------------*/
  .cover-slides{
      height: 100vh;
@@ -1830,6 +1834,17 @@
      right: 15px;
      top: 18px;
 }
+.product-item-filter .pagination{
+    padding-left: 5%;
+}
+.pagination .page-item .page-link{
+    color: black;
+}
+.pagination .page-item.active .page-link {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
  .product-item-filter p{
      float: right;
      line-height: 42px;
@@ -2426,6 +2441,10 @@
 	padding: 12px 25px;
 	border: none;
 }
+
+/*---------------------Login Page----------------*/
+
+
 
 
 

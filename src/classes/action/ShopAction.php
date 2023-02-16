@@ -9,7 +9,7 @@ class ShopAction extends Action
 
     public function execute()
     {
-
+        require_once 'src/views/Header.php';
         require_once 'src/views/EarlyShop.php';
 
         $nbProduits = Produit::count();
@@ -74,5 +74,6 @@ END;
         echo $html;
 
         require_once 'src/views/LateShop.php';
+        require_once 'src/views/Footer.php';
     }
 }
