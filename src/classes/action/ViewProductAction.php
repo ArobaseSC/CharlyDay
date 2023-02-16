@@ -52,6 +52,7 @@ class ViewProductAction extends Action {
                         <h5>$prix</h5>
 						<h4>Description :</h4>
 						<p>$produit->description</p>
+						<p>$produit->detail</p>
 						<form method="post" action="?action=view_product&id_product={$produit->id}&quantite=2">
                             <ul>
                                 <li>
