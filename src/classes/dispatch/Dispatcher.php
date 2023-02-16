@@ -24,9 +24,7 @@ class Dispatcher
 
             case 'shop':
                 $action = new ShopAction();
-
-                $html = $action->execute();
-
+                $action->execute();
                 break;
 
             default:

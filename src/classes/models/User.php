@@ -1,10 +1,7 @@
 <?php
 
-namespace
-
-Application\models use use\Eloquent;
-
-Illuminate\Database\Eloquent as Eloquent;
+namespace Application\models;
+use Illuminate\Database\Eloquent as Eloquent;
 
 class User extends Eloquent\Model
 {
