@@ -23,6 +23,12 @@ class CartManager
     {
         if(!self::alreadyInCart($product)){
             self::$liste[] = new Cart($product, $qte);
+        } else {
+            $data = self::getProductByName($product->nom);
+            $prd = $data->__get('produit');
+            $qtite = $data->__get('quantite');
+            self::removeProduct($prd);
+            self::$liste[] = new Cart($product, $qtite+$qte);
         }
     }
 
