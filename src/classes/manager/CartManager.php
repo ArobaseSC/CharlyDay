@@ -12,7 +12,6 @@ class CartManager
         if (self::hasSavedCart()) {
             self::$liste = unserialize($_SESSION['cart']);
         }
-        var_dump(self::$liste);
     }
 
     public static function saveCart(): void
@@ -23,7 +22,11 @@ class CartManager
     public static function addProduct($product)
     {
         self::$liste[] = $product;
-        var_dump(self::$liste);
+    }
+
+    public static function getCart() : array
+    {
+        return self::$liste;
     }
 
     public static function hasSavedCart(): bool

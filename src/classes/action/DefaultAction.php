@@ -7,7 +7,7 @@ class DefaultAction {
     public function header(): string
     {
         $html = <<< HEAD
-        <!DOCTYPE html>
+                <!DOCTYPE html>
                 <html lang="en">
                 <!-- Basic -->
                 
@@ -19,7 +19,7 @@ class DefaultAction {
                     <meta name="viewport" content="width=device-width, initial-scale=1">
                 
                     <!-- Site Metas -->
-                    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+                    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
                     <meta name="keywords" content="">
                     <meta name="description" content="">
                     <meta name="author" content="">
@@ -46,72 +46,6 @@ class DefaultAction {
                 
                 <body>
                     <!-- Start Main Top -->
-                    <div class="main-top">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div class="custom-select-box">
-                                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                                            <option>¥ JPY</option>
-                                            <option>$ USD</option>
-                                            <option>€ EUR</option>
-                                        </select>
-                                    </div>
-                                    <div class="right-phone-box">
-                                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
-                                    </div>
-                                    <div class="our-link">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
-                                            <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
-                                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div class="login-box">
-                                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                                            <option>Register Here</option>
-                                            <option>Sign In</option>
-                                        </select>
-                                    </div>
-                                    <div class="text-slid-box">
-                                        <div id="offer-box" class="carouselTicker">
-                                            <ul class="offer-box">
-                                                <li>
-                                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
-                                                </li>
-                                                <li>
-                                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                                </li>
-                                                <li>
-                                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                                </li>
-                                                <li>
-                                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                                                </li>
-                                                <li>
-                                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
-                                                </li>
-                                                <li>
-                                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
-                                                </li>
-                                                <li>
-                                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
-                                                </li>
-                                                <li>
-                                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Main Top -->
-                
-                    <!-- Start Main Top -->
                     <header class="main-header">
                         <!-- Start Navigation -->
                         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
@@ -128,21 +62,10 @@ class DefaultAction {
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="navbar-menu">
                                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                                        <li class="dropdown active">
-                                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="shop.html">Sidebar Shop</a></li>
-                                                <li><a href="shop-detail.html">Shop Detail</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="my-account.html">My Account</a></li>
-                                                <li><a href="wishlist.html">Wishlist</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="about.html">A propos</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="shop.html">Boutique</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
                                     </ul>
                                 </div>
                                 <!-- /.navbar-collapse -->
@@ -150,11 +73,10 @@ class DefaultAction {
                                 <!-- Start Atribute Navigation -->
                                 <div class="attr-nav">
                                     <ul>
-                                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                                         <li class="side-menu"><a href="#">
                                         <i class="fa fa-shopping-bag"></i>
                                             <span class="badge">3</span>
-                                            <p>My Cart</p>
+                                            <p>Mon Panier</p>
                                     </a></li>
                                     </ul>
                                 </div>
@@ -210,226 +132,170 @@ class DefaultAction {
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <h2>Cart</h2>
+                                    <h2>A Propos</h2>
                                     <ul class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                                        <li class="breadcrumb-item active">Cart</li>
+                                        <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                                        <li class="breadcrumb-item active">A Propos</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- End All Title Box -->
-                
-        HEAD;
-        return $html;
+                        
+                HEAD;
+                return $html;
 
-    }
+            }
 
-    public function footer(): string
-    {
-        $html = <<< HEAD
-        <!-- Start Instagram Feed  -->
-                    <div class="instagram-box">
-                        <div class="main-instagram owl-carousel owl-theme">
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-01.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
+            public function footer(): string
+            {
+                $html = <<< HEAD
+                <!-- Start Instagram Feed  -->
+            <div class="instagram-box">
+                <div class="main-instagram owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="ins-inner-box">
+                            <img src="images/slider-1.jpg" alt="" />
+                            <div class="hov-in">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ins-inner-box">
+                            <img src="images/slider-2.jpg" alt="" />
+                            <div class="hov-in">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ins-inner-box">
+                            <img src="images/slider-3.jpg" alt="" />
+                            <div class="hov-in">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ins-inner-box">
+                            <img src="images/slider-4.jpg" alt="" />
+                            <div class="hov-in">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ins-inner-box">
+                            <img src="images/slider-5.jpg" alt="" />
+                            <div class="hov-in">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Instagram Feed  -->
+        
+        
+            <!-- Start Footer  -->
+            <footer>
+                <div class="footer-main">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <div class="footer-top-box">
+                                    <h3>Horaire d'ouverture</h3>
+                                    <ul class="list-time">
+                                        <li>Mardi - Samedi: 10h00 à 22h00</li> <li>Dimanche-Lundi: Fermé</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-02.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <div class="footer-top-box">
+                                    <h3>Réseaux sociaux</h3>
+                                    <p>Rejoignez nos réseaux sociaux.</p>
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/courtcircuitVoltaire"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.instagram.com/court_circuit_nancy/?hl=fr"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-03.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <div class="footer-widget">
+                                    <h4>A propos de CourCircuit</h4>
+                                    <p>Court-circuit est un lieu de vie associant épicerie et café/bar, permettant de trouver en un seul et même lieu et au juste prix des produits locaux, bio et vendus en vrac (c’est-à-dire sans emballages).</p> 
+                                    <p>Notre objectif est de promouvoir – par l’échange et la sensibilisation – l’agriculture et l’économie locale, de faciliter un mode de consommation responsable, de proposer un service accessible à tous·tes et de soutenir les producteurs et productrices qui se tournent vers l’agriculture biologique.</p> 
+                                    <p>Mais court-circuit est aussi votre lieu de vie : rencontre avec les producteur·trice·s locaux, les associations, ateliers zéro déchets, expositions … La communauté court-circuit permet l’échange, la formation, l’information, la découverte et le dialogue avec tous·tes les acteurs et actrices impliqué·e·s dans la transition écologique, l’économie sociale et solidaire.</p>				
+                                    <p>Nous sommes associés avec le Florain, la monnaie locale complémentaire à l’Euro dans le sud de la Meurthe-et-Moselle : nous acceptons la monnaie et sommes comptoir de change !</p>			
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-04.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <div class="footer-link">
+                                    <h4>Information</h4>
+                                    <ul>
+                                        <li><a href="index.html">Accueil</a></li>
+                                        <li><a href="about.html">A Propos</a></li>
+                                        <li><a href="shop.html">Boutique</a></li>
+                                        <li><a href="contact-us.html">Contact</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-05.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-06.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-07.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-08.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-09.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="ins-inner-box">
-                                    <img src="images/instagram-img-05.jpg" alt="" />
-                                    <div class="hov-in">
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                    </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <div class="footer-link-contact">
+                                    <h4>Contact</h4>
+                                    <ul>
+                                        <li>
+                                            <p><i class="fas fa-map-marker-alt"></i>Addresse : 47 Rue Voltaire, 54520 Laxou </p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fas fa-phone-square"></i>Telephone: <a href="tel:+1-888705770">03 83 19 71 03</a></p>
+                                        </li>
+                                        <li>
+                                            <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">local@courtcircuitnancy.fr</a></p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- End Instagram Feed  -->
-                
-                
-                    <!-- Start Footer  -->
-                    <footer>
-                        <div class="footer-main">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-12 col-sm-12">
-                                        <div class="footer-top-box">
-                                            <h3>Business Time</h3>
-                                            <ul class="list-time">
-                                                <li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-12 col-sm-12">
-                                        <div class="footer-top-box">
-                                            <h3>Newsletter</h3>
-                                            <form class="newsletter-box">
-                                                <div class="form-group">
-                                                    <input class="" type="email" name="Email" placeholder="Email Address*" />
-                                                    <i class="fa fa-envelope"></i>
-                                                </div>
-                                                <button class="btn hvr-hover" type="submit">Submit</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-12 col-sm-12">
-                                        <div class="footer-top-box">
-                                            <h3>Social Media</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                            <ul>
-                                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-12 col-sm-12">
-                                        <div class="footer-widget">
-                                            <h4>About Freshshop</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-12 col-sm-12">
-                                        <div class="footer-link">
-                                            <h4>Information</h4>
-                                            <ul>
-                                                <li><a href="#">About Us</a></li>
-                                                <li><a href="#">Customer Service</a></li>
-                                                <li><a href="#">Our Sitemap</a></li>
-                                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                                <li><a href="#">Privacy Policy</a></li>
-                                                <li><a href="#">Delivery Information</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-12 col-sm-12">
-                                        <div class="footer-link-contact">
-                                            <h4>Contact Us</h4>
-                                            <ul>
-                                                <li>
-                                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
-                                                </li>
-                                                <li>
-                                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                                                </li>
-                                                <li>
-                                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End Footer  -->
-                
-                    <!-- Start copyright  -->
-                    <div class="footer-copyright">
-                        <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-                            <a href="https://html.design/">html design</a></p>
-                    </div>
-                    <!-- End copyright  -->
-                
-                    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-                
-                    <!-- ALL JS FILES -->
-                    <script src="js/jquery-3.2.1.min.js"></script>
-                    <script src="js/popper.min.js"></script>
-                    <script src="js/bootstrap.min.js"></script>
-                    <!-- ALL PLUGINS -->
-                    <script src="js/jquery.superslides.min.js"></script>
-                    <script src="js/bootstrap-select.js"></script>
-                    <script src="js/inewsticker.js"></script>
-                    <script src="js/bootsnav.js."></script>
-                    <script src="js/images-loded.min.js"></script>
-                    <script src="js/isotope.min.js"></script>
-                    <script src="js/owl.carousel.min.js"></script>
-                    <script src="js/baguetteBox.min.js"></script>
-                    <script src="js/form-validator.min.js"></script>
-                    <script src="js/contact-form-script.js"></script>
-                    <script src="js/custom.js"></script>
-                </body>
-                
-                </html>
+                </div>
+            </footer>
+            <!-- End Footer  -->
+        
+            <!-- Start copyright  -->
+            <div class="footer-copyright">
+                <p class="footer-company">Tous droits réservés. &copy; 2023 <a href="#">ArobaseStudentCorporation</a>
+            </div>
+            <!-- End copyright  -->
+        
+            <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+        
+            <!-- ALL JS FILES -->
+            <script src="js/jquery-3.2.1.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <!-- ALL PLUGINS -->
+            <script src="js/jquery.superslides.min.js"></script>
+            <script src="js/bootstrap-select.js"></script>
+            <script src="js/inewsticker.js"></script>
+            <script src="js/bootsnav.js."></script>
+            <script src="js/images-loded.min.js"></script>
+            <script src="js/isotope.min.js"></script>
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/baguetteBox.min.js"></script>
+            <script src="js/jquery-ui.js"></script>
+            <script src="js/jquery.nicescroll.min.js"></script>
+            <script src="js/form-validator.min.js"></script>
+            <script src="js/contact-form-script.js"></script>
+            <script src="js/custom.js"></script>
+        </body>
+        
+        </html>
         HEAD;
         return $html;
     }
