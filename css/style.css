@@ -1834,6 +1834,17 @@
      right: 15px;
      top: 18px;
 }
+.product-item-filter .pagination{
+    padding-left: 5%;
+}
+.pagination .page-item .page-link{
+    color: black;
+}
+.pagination .page-item.active .page-link {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
  .product-item-filter p{
      float: right;
      line-height: 42px;

@@ -10,6 +10,16 @@ class ViewProductAction extends Action {
         if (!isset($_GET['id_product'])){return;}
 
 
+        // si on veut ajouter au panier
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $quantite = filter_var($_POST['quantite'], FILTER_SANITIZE_NUMBER_INT);
+            var_dump($quantite);
+            header("Location: ?action=add_cart&id_product={$_GET['id_product']}&quantite=$quantite");
+        }
+
+
+
+
         require_once 'src/views/Header.php';
         require_once 'src/views/EarlyViewProduct.php';
 
@@ -29,9 +39,6 @@ class ViewProductAction extends Action {
             $start = 1;
         }
 
-
-
-
        $html = <<<END
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-6">
@@ -43,24 +50,27 @@ class ViewProductAction extends Action {
                     <div class="single-product-details">
                         <h2>$produit->nom</h2>
                         <h5>$prix</h5>
-                        <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span><p>
 						<h4>Description :</h4>
 						<p>$produit->description</p>
-						<ul>
-							<li>
-								<div class="form-group quantity-box">
-									<label class="control-label">$demande</label>
-									<input class="form-control" value=$start min="1" type="number">
-								</div>
-							</li>
-						</ul>
-
-						<div class="price-box-bar">
-							<div class="cart-and-bay-btn">
-								<a class="btn hvr-hover" href="#">Ajouter au panier</a>
-								<a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Ajouté aux favoris</a>
-							</div>
-						</div>
+						<form method="post" action="?action=view_product&id_product={$produit->id}&quantite=2">
+                            <ul>
+                                <li>
+                                    <div class="form-group quantity-box">
+                                        <label class="control-label">$demande</label>
+                                        <input id="input_quantite" class="form-control" name="quantite" value=$start min="1" type="number">
+                                    </div>
+                                </li>
+                            </ul>
+    
+                            <div class="price-box-bar">
+                                <div class="cart-and-bay-btn">
+                                    <button class="btn hvr-hover" type="submit">Ajouter au panier</button>
+    
+                                    <a class="btn hvr-hover" href="?action=add_cart&id_product={$produit->id}&quantite=2">Ajouter au panier</a>
+                                    <a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Ajouté aux favoris</a>
+                                </div>
+                            </div>
+						</form>
                     </div>
                 </div>
             </div>

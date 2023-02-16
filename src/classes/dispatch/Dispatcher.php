@@ -5,6 +5,11 @@ declare(strict_types=1);
 namespace Application\dispatch;
 
 use Application\action\LoginAction;
+
+use Application\action\AddCartAction;
+use Application\action\CartAction;
+
+use Application\action\RemoveCartAction;
 use Application\action\ViewProductAction;
 
 use Application\action\ShopAction;
@@ -38,10 +43,25 @@ class Dispatcher
                 $act = new ViewProductAction();
                 $act->execute();
                 break;
+            case 'login':
+                $act = new LoginAction();
+            case 'cart':
+                $act = new CartAction();
+                $act->execute();
+                break;
+            case 'add_cart':
+                $act = new AddCartAction();
+                $act->execute();
+                break;
+            case 'remove_cart':
+                $act = new RemoveCartAction();
+                $act->execute();
+                break;
             default:
                 $html ='';
                 break;
         }
 
     }
+
 }
