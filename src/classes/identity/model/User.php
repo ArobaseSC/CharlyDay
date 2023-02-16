@@ -1,53 +1,18 @@
 <?php
 
 namespace Application\identity\model;
+use \Illuminate\Database\Eloquent as Eloquent;
 
-use Exception;
+class User extends Eloquent\Model{
+    protected $table = 'user';
+    protected $primaryKey = 'id_user';
+    public $timestamps = false;
 
-class User
-{
 
-    private int $id;
-    private string $email;
-
-    //private int $role;
-
-    public function __construct(int $id, string $email/*int $role*/)
-    {
-        $this->email = $email;
-        $this->id = $id;
-        //$this->role = $role;
+    function commande(){
+        return
+            $this->belongsToMany('Application\identity\model\Produit', 'commande', 'id_user', 'id')
+                ->withPivot(['id_comm', 'date_comm', 'quantite']);
     }
-
-    /**
-     * @throws Exception
-     */
-    public function __get(string $at): mixed
-    {
-        if (property_exists($this, $at)) {
-            return $this->$at;
-        }
-
-        throw new Exception ("$at: invalid property");
-    }
-
-
-    /**
-     * @throws Exception
-     */
-    public function __set(string $at, mixed $val): void
-    {
-        if (property_exists($this, $at)) {
-            $this->$at = $val;
-        } else {
-            throw new Exception ("$at: invalid property");
-        }
-    }
-
-    public function __isset(string $name): bool
-    {
-        return isset($this->$name);
-    }
-
 
 }
