@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Application\dispatch;
 
+use Application\action\LoginAction;
+use Application\action\ViewProductAction;
+
 use Application\action\ShopAction;
 
 class Dispatcher
@@ -21,15 +24,24 @@ class Dispatcher
     final public function dispatch(): void
     {
         switch ($this->action) {
+            case 'login':
+                $act = new LoginAction();
+                $act->execute();
+                break;
 
             case 'shop':
                 $action = new ShopAction();
                 $action->execute();
                 break;
 
+            case 'view_product':
+                $act = new ViewProductAction();
+                $act->execute();
+                break;
             default:
                 $html ='';
                 break;
         }
+
     }
 }

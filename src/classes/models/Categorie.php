@@ -13,6 +13,6 @@ class Categorie extends Eloquent\Model
 
     function produits()
     {
-        return $this->hasMany('Produit', 'categorie');
+        return $this->hasMany('Application\models\Produit', 'categorie');
     }
 }

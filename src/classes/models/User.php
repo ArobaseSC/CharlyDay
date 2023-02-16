@@ -13,7 +13,7 @@ class User extends Eloquent\Model
     function commande()
     {
         return
-            $this->belongsToMany('Produit', 'commande', 'id_user', 'id')
+            $this->belongsToMany('Application\models\Produit', 'commande', 'id_user', 'id')
                 ->withPivot(['id_comm', 'date_comm', 'quantite']);
     }
 
