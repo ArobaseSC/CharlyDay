@@ -26,9 +26,10 @@ class AddStarAction extends Action{
 
 
         // on recupere la table pivot
-        $user->favoris()->attach($_GET['id_produit']);
+        $user->favoris()->toggle($_GET['id_produit']);
 
-        echo "oui";
+        // on retourne au shop
+        header("Location: ?action=shop");
 
 
     }

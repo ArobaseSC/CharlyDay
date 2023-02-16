@@ -2,41 +2,61 @@
 
 namespace Application\action;
 
+use Application\models\User;
+
 class CompteAction extends Action
 {
 
     public function execute()
     {
-        /**if($_SESSION["loggedUser"] === null){
-            header("Location: ?action=login");
-        }else{*/
+
+        // si l'utilisateur n'est pas co, on va sur le shop
+        if (!isset($_SESSION['loggedUser'])){
+            header("Location: ?action=shop");
+            return;
+        }
+
+        // on recupere l'user
+        $utilisateur = unserialize($_SESSION['loggedUser']);
+
+        $user = User::where('id_user', '=', $utilisateur->id)->first();
+
             require_once 'src/views/Header.php';
             $html = <<<END
                 <div class="account-container">
   <div class="personal-info">
     <h2>Informations personnelles</h2>
-    <p>Nom : John Doe</p>
-    <p>Adresse : 123 Rue Principale</p>
-    <p>Ville : Montréal</p>
-    <p>Pays : Canada</p>
-    <p>Email : johndoe@gmail.com</p>
+    <p>Nom : $user->nom</p>
+    <p>Prenom : $user->prenom</p>
+    <p>Email : $user->email</p>
+    <p>Télephone : $user->tel</p>
   </div>
   <div class="favorites">
     <h2>Produits favoris</h2>
     <ul>
 END;
 
+            $produits = $user->favoris()->get();
+            foreach ($produits as $produit){
+
+                if ($produit->poids === 0) {
+                    $prix = "{$produit->prix}€ au kilo";
+                } else {
+                    $prix = "{$produit->prix}€";
+                }
+
             $html.= <<<END
                 <li>
                     <div class="product">
                         <div>
-                            <img src="https://www.lesjardinsdegaia.com/1210-large_default/lot-de-2-figurines-de-jardin-les-2-amoureux.jpg" alt="image produit">
-                            <p>nom du produit</p>
-                            <p>prix du produit</p>
+                            <img src="images/{$produit->id}.jpg" alt="image produit">
+                            <p>$produit->nom</p>
+                            <p>$prix</p>
                         </div>
                     </div>
                 </li>   
 END;
+            }
             $html.= <<<END
                 </div>
                 <div class="order-history">

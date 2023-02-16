@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Application\dispatch;
 
 use Application\action\AboutAction;
+use Application\action\AddStarAction;
 use Application\action\CompteAction;
 use Application\action\InscriptionAction;
 use Application\action\LogConnAction;
@@ -77,6 +78,14 @@ class Dispatcher
                 break;
             case 'checkout':
                 $act = new ValidateCart();
+                $act->execute();
+                break;
+            case 'add-star':
+                $act = new AddStarAction();
+                $act->execute();
+                break;
+            case 'compte':
+                $act = new CompteAction();
                 $act->execute();
                 break;
             default:
