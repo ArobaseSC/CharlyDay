@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Application\dispatch;
 
 use Application\action\AboutAction;
+use Application\action\AddStarAction;
 use Application\action\InscriptionAction;
 use Application\action\LogConnAction;
 use Application\action\LoginAction;
@@ -67,6 +68,10 @@ class Dispatcher
                 break;
             case 'remove_cart':
                 $act = new RemoveCartAction();
+                $act->execute();
+                break;
+            case 'add-star':
+                $act = new AddStarAction();
                 $act->execute();
                 break;
             default:

@@ -3,6 +3,7 @@
 namespace Application\action;
 
 use Application\identity\authentication\service\AuthenticationIdentityService;
+use Application\identity\Utilisateur;
 use Application\models\User;
 
 class LoginAction extends Action
@@ -33,6 +34,10 @@ class LoginAction extends Action
             $html = "Bienvenue {$user->nom}";
             // on l'enregistre dans la session
             $_SESSION["loggedUser"] = serialize($user);
+
+            $utilisateur = new Utilisateur($user);
+            // on enregistre le user dans la session
+            $_SESSION['loggedUser'] = serialize($utilisateur);
             // on va sur la page de la boutique
             header("Location: ?action=shop");
 

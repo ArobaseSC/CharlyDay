@@ -3,6 +3,7 @@
 namespace Application\action;
 
 use Application\identity\authentication\service\PasswordStrengthCheckerService;
+use Application\identity\Utilisateur;
 use Application\models\User;
 
 class InscriptionAction extends Action {
@@ -44,9 +45,12 @@ class InscriptionAction extends Action {
             $user->prenom = $prenom;
 
             $user->save();
+
+            $utilisateur = new Utilisateur($user);
             // on enregistre le user dans la session
-            $_SESSION['loggedUser'] = $user;
+            $_SESSION['loggedUser'] = serialize($utilisateur);
             // on va sur la page de la boutique
+
             header("Location: ?action=shop");
         }
     }
