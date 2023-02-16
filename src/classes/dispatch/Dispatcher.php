@@ -80,7 +80,7 @@ class Dispatcher
                 $act->execute();
                 break;
             default:
-                $html ='';
+                header('Location: ?action=shop');
                 break;
         }
 
