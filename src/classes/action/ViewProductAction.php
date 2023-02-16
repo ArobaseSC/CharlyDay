@@ -64,7 +64,7 @@ class ViewProductAction extends Action {
     
                             <div class="price-box-bar">
                                 <div class="cart-and-bay-btn">
-                                    <button type="submit"><a class="btn hvr-hover" href="?action=add_cart&id_product={$produit->id}&quantite=2">Ajouter au panier</a></button>
+                                    <button type="submit" class="btn hvr-hover" style="color: white; font-weight: 700"><a>Ajouter au panier</a></button>
                      
                                     <a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Ajouté aux favoris</a>
                                 </div>
