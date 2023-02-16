@@ -129,7 +129,7 @@
                         // image
                         $html .= "<a href='#' class='photo'><img src='images/$pr->id.jpg' class='cart-thumb' alt='' /></a>";
                         // nom
-                        $html .= "<h6><a href='#'>$pr->nom </a></h6>";
+                        $html .= "<h6><a href='?action=view_product&id_product=$pr->id'>$pr->nom </a></h6>";
                         // prix
                         $html .= "<p>$qte $refQte - <span class='price'>$prix €</span></p>";
                         $html .= "</li>";
