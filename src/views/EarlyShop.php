@@ -5,7 +5,7 @@
             <div class="col-lg-12">
                 <h2>Boutique</h2>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="">Accueil</a></li>
                     <li class="breadcrumb-item active">Boutique</li>
                 </ul>
             </div>
