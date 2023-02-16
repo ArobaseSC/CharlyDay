@@ -52,7 +52,7 @@ class ShopAction extends Action
                                                         <h4>{$produit->nom}</h4>
                                                     </a>
 
-               END;
+END;
 
             if ($produit->poids == 0) {
                 $html .= "<h5> {$produit->prix}€ au kilo</h5>";
@@ -67,7 +67,7 @@ class ShopAction extends Action
                                             </div>
                                         </div>
                                     </div>
-                END;
+END;
         }
 
 
