@@ -2447,6 +2447,134 @@
 
 
 
+.login .container {
+
+    position: relative;
+    width: 420px;
+    height: 500px;
+    background-color: #f0f6fb;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+    margin-top: 10%;
+    margin-bottom: 5%;
+
+}
+
+.login .logo {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 0 5px 5px #ccc;
+    font-size: 1.8em;
+    background-color: #6CBE99;
+    color: #f0f6fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .tab-body {
+    position: relative;
+    display: none;
+
+    height: auto;
+    padding: 15% 5%;
+    margin-top: 20%;
+    background-color: #fff;
+    color: #6CBE99;
+    box-shadow: 0px 5px 10px #7c8395;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+.login .tab-body.active {
+    display: block;
+}
+
+.login .row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #6CBE99;
+    padding: 1.8% 0;
+    margin: 20px 0;
+}
+
+.login .row .input {
+    width: 90%;
+    border: none;
+    outline: none;
+    color: #6CBE99;
+    font-weight: 550;
+}
+.login .input::placeholder {
+    color: #6CBE99;
+}
+
+.login .link {
+    display: inline-block;
+    font-size: 0.8em;
+    width: 100%;
+    text-decoration: none;
+    color: #2b384f;
+    text-align: right;
+}
+.login .link:hover {
+    text-decoration: underline;
+}
+
+.login .btn {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    width: 120px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: #6CBE99;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login .tab-footer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 30px;
+    display: flex;
+    margin-top: 10%;
+}
+
+.login .tab-link {
+    text-decoration: none;
+    color: #6CBE99;
+    margin: 0 3%;
+}
+
+.login .tab-link.active {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 520px) {
+    .login .container {
+        width: 80%;
+        min-width: 380px;
+        min-height: 490px;
+    }
+    .login .tab-body {
+        width: 100%;
+        padding: 15% 5%;
+        margin-top: 25%;
+        max-height: 420px;
+    }
+}
+
 
 
 
