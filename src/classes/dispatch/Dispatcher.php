@@ -88,9 +88,7 @@ class Dispatcher
                 $act = new ActionAccueil();
                 $act->execute();
                 break;
-            default:
-                header('Location: ?action=shop');
-                break;
+
         }
 
     }
