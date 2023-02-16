@@ -2,14 +2,16 @@
 
 namespace Application\action;
 
-use Application\identity\model\Produit;
 use Application\manager\CartManager;
 
 class CartAction extends Action
 {
 
-    public function execute(): string
+    public function execute()
     {
+
+        require_once 'src/views/Header.php';
+
         $html = <<< HEAD
             <!-- Start Cart  -->
             <div class="cart-box-main">
@@ -22,9 +24,9 @@ class CartAction extends Action
                                         <tr>
                                             <th></th>
                                             <th>Nom du produit</th>
-                                            <th>Prix</th>
+                                            <th>Prix à l'unité</th>
                                             <th>Quantité</th>
-                                            <th>Total</th>
+                                            <th>Prix</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -32,51 +34,44 @@ class CartAction extends Action
             HEAD;
 
         CartManager::loadCart();
-        $produits = CartManager::getCart();
-        foreach($produits as $pr){
+        $carts = CartManager::getCart();
+        $prixTotal = 0;
+        foreach($carts as $cart){
 
+            $pr = $cart->__get('produit');
+            $qte = $cart->__get('quantite');
+
+            if($pr->poids == 0){
+                $prix = $pr->prix * ($qte / 1000);
+                $refQte = "grammes";
+            } else {
+                $prix = $pr->prix * $qte;
+                $refQte = "unité(s)";
+            }
+
+            $prixTotal += $prix;
+
+            $html .= "<tr>";
             // image
-            $html .= "<tr><td class='thumbnail-img'><a href='#'><img class='img-fluid' src='images/$pr->id.jpg' alt=''/></a></td></tr>";
+            $html .= "<td class='thumbnail-img'><a href='#'><img class='img-fluid' src='images/$pr->id.jpg' alt=''/></a></td>";
+            // nom
+            $html .= "<td class='name-pr'><a href='#'>$pr->nom</a></td>";
+            // prix
+            $html .= "<td class='price-pr'><p>$pr->prix €</p></td>";
+            // qte
+                $html .= "<td class='price-pr'><p>$qte $refQte</p></td>";
+            // total (qte * prix)
+            $html .= "<td class='total-pr'><p>$prix €</p></td>";
+            // delete
+            $html .= "<td class='remove-pr'><a href=''#'><i class='fas fa-times'></i></a></td>";
+            $html .= "</tr>";
 
 
         }
 
-        /**
-                                        <tr>
-                                            <td class="thumbnail-img">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-                                                </a>
-                                            </td>
-                                            <td class="name-pr">
-                                                <a href="#">Lorem ipsum dolor sit amet</a>
-                                            </td>
-                                            <td class="price-pr">
-                                                <p>$ 80.0</p>
-                                            </td>
-                                            <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                            <td class="total-pr">
-                                                <p>$ 80.0</p>
-                                            </td>
-                                            <td class="remove-pr">
-                                                <a href="#">
-                                            <i class="fas fa-times"></i>
-                                        </a>
-                                            </td>
-                                        </tr>
-         **/
-
          $html .= <<< HEAD
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="row my-5">
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="update-box">
-                                <input value="Mettre à jour le panier" type="submit">
                             </div>
                         </div>
                     </div>
@@ -87,8 +82,8 @@ class CartAction extends Action
                             <div class="order-box">
                                 <hr>
                                 <div class="d-flex gr-total">
-                                    <h5>Total</h5>
-                                    <div class="ml-auto h5"> $ 388 </div>
+                                    <h5>Total du panier</h5>
+                                    <div class="ml-auto h5">$prixTotal €</div>
                                 </div>
                                 <hr> </div>
                         </div>
@@ -100,7 +95,10 @@ class CartAction extends Action
             <!-- End Cart -->
         HEAD;
 
-        return $html;
+
+        echo $html;
+
+        require_once 'src/views/Footer.php';
 
     }
 

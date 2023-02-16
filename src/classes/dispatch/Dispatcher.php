@@ -6,7 +6,6 @@ namespace Application\dispatch;
 
 use Application\action\AddCartAction;
 use Application\action\CartAction;
-use Application\action\DefaultAction;
 
 use Application\action\ViewProductAction;
 
@@ -26,8 +25,6 @@ class Dispatcher
      */
     final public function dispatch(): void
     {
-        $def = new DefaultAction();
-
         switch ($this->action) {
 
             case 'shop':
@@ -41,24 +38,16 @@ class Dispatcher
                 break;
             case 'cart':
                 $act = new CartAction();
-                $html = $act->execute();
+                $act->execute();
                 break;
             case 'add_cart':
                 $act = new AddCartAction();
-                $html = $act->execute();
+                $act->execute();
                 break;
             default:
-                $html ='';
                 break;
         }
 
-        $this->render($def->header() . $html . $def->footer());
-    }
-
-
-    private function render(string $template): void
-    {
-        echo $template;
     }
 
 }

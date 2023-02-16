@@ -19,9 +19,9 @@ class CartManager
         $_SESSION['cart'] = serialize(self::$liste);
     }
 
-    public static function addProduct($product)
+    public static function addProduct($product, $qte)
     {
-        self::$liste[] = $product;
+        self::$liste[] = new Cart($product, $qte);
     }
 
     public static function getCart() : array

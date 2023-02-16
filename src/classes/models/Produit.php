@@ -10,6 +10,7 @@ class Produit extends Eloquent\Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
+    private int $poids;
 
     function categorie()
     {
@@ -23,4 +24,5 @@ class Produit extends Eloquent\Model
             $this->belongsToMany('Application\models\User', 'commande', 'id', 'id_user')
                 ->withPivot(['id_comm', 'date_comm', 'quantite']);
     }
+
 }
