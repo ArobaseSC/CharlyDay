@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Application\dispatch;
 
+use Application\action\ViewProductAction;
+
 use Application\action\ShopAction;
 
 class Dispatcher
@@ -27,9 +29,14 @@ class Dispatcher
                 $action->execute();
                 break;
 
+            case 'view_product':
+                $act = new ViewProductAction();
+                $act->execute();
+                break;
             default:
                 $html ='';
                 break;
         }
+
     }
 }

@@ -13,14 +13,14 @@ class Produit extends Eloquent\Model
 
     function categorie()
     {
-        return $this->belongsTo('Categorie', 'categorie');
+        return $this->belongsTo('Application\models\Categorie', 'categorie');
     }
 
 
     function commande()
     {
         return
-            $this->belongsToMany('User', 'commande', 'id', 'id_user')
+            $this->belongsToMany('Application\models\User', 'commande', 'id', 'id_user')
                 ->withPivot(['id_comm', 'date_comm', 'quantite']);
     }
 }
