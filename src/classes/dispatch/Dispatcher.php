@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Application\dispatch;
 
+use Application\action\AboutAction;
+use Application\action\CompteAction;
 use Application\action\InscriptionAction;
 use Application\action\LogConnAction;
 use Application\action\LoginAction;
@@ -34,6 +36,14 @@ class Dispatcher
             case 'shop':
                 $action = new ShopAction();
                 $action->execute();
+                break;
+            case 'about-us':
+                $action = new AboutAction();
+                $action->execute();
+                break;
+            case 'compte':
+                $act = new CompteAction();
+                $act->execute();
                 break;
 
             case 'view_product':
