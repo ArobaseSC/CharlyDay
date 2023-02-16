@@ -8,6 +8,10 @@ use Application\action\AddCartAction;
 use Application\action\CartAction;
 use Application\action\DefaultAction;
 
+use Application\action\ViewProductAction;
+
+use Application\action\ShopAction;
+
 class Dispatcher
 {
     private ?string $action = null;
@@ -27,7 +31,13 @@ class Dispatcher
         switch ($this->action) {
 
             case 'shop':
-                $html = 'shop';
+                $action = new ShopAction();
+                $action->execute();
+                break;
+
+            case 'view_product':
+                $act = new ViewProductAction();
+                $act->execute();
                 break;
             case 'cart':
                 $act = new CartAction();
