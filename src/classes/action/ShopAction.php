@@ -103,7 +103,7 @@ END;
 
             $html .= <<<END
                                                     <p>{$produit->description}</p>
-                                                    <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                    <a class="btn hvr-hover" href="?action=view_product&id_product={$produit->id}">Voir le produit</a>
                                                 </div>
                                             </div>
                                         </div>
