@@ -1,6 +1,5 @@
 <?php
 
-declare(strict_types=1);
 
 namespace Application\identity\authentication\service;
 
@@ -23,27 +22,22 @@ class AuthenticationIdentityService
      * @throws DatabaseConnectionException
      * @throws BadPasswordException
      */
-    public static function authenticate(string $email, string $password): User
+    public static function authenticate(string $email, string $password)
     {
 
-        $db = ConnectionFactory::getConnection();
-        $st = $db->prepare("select * from user where email = ?");
-        $st->execute([$email]);
-        $row = $st->fetch(PDO::FETCH_ASSOC);
-        // s'il n'y a pas de retour à la requetes, c'est que l'utilisateur n'existe pas
-        if (!$row) {
+        $user = \Application\models\User::where("email", "=", $email)->first();
+        if ($user === null) {
             throw new AuthenticationException("erreur d'auth");
-
         }
+        $hash = $user->mdp;
 
-        $hash = $row['passwrd'];
 
         // si ce n'est pas le bon password
         if (!password_verify($password, $hash)) {
             throw new BadPasswordException();
         }
 
-        return new User((int)$row['id'], $email);
+        return new $user;
     }
 
     /**
@@ -52,38 +46,11 @@ class AuthenticationIdentityService
      */
     public static function register(string $email, string $password, string $confirm): string
     {
-        if ($password !== $confirm) {
-            throw new AuthenticationException(<<<END
-                                <div class="flex justify-center items-center flex-col h-screen pb-72">
-                                    <div class="bg-gray-50 dark:bg-gray-700 p-10 w-1/2 flex items-center justify-center flex-col">
-                                        <h1 class="text-dark text-4xl font-light pb-5 dark:text-white">Les mots de passe ne sont pas les mêmes</h1>
-                                        <a href='index.php?action=sign-up' class="text-gray-900 dark:text-white font-sm text-lg">S'insrire</a>
-                                    </div>
-                                </div>
-                                END);
-        }
 
-        if (!PasswordStrengthCheckerService::check($password)) {
-            throw new AuthenticationException(<<<END
-                                <div class="flex justify-center items-center flex-col h-screen pb-72">
-                                    <div class="bg-gray-50 dark:bg-gray-700 p-10 w-1/2 flex items-center justify-center flex-col">
-                                        <h1 class="text-dark text-4xl font-light pb-5 dark:text-white">Mot de passe trop faible</h1>
-                                        <a href='index.php?action=sign-up' class="text-gray-900 dark:text-white font-sm text-lg">S'insrire</a>
-                                    </div>
-                                </div>
-                                END);
-        }
 
-        if (self::alreadyExists($email)) {
-            throw new AuthenticationException(<<<END
-                                <div class="flex justify-center items-center flex-col h-screen pb-72">
-                                    <div class="bg-gray-50 dark:bg-gray-700 p-10 w-1/2 flex items-center justify-center flex-col">
-                                        <h1 class="text-dark text-4xl font-light pb-5 dark:text-white">Cet email est déjà utilisé</h1>
-                                        <a href='index.php?action=sign-up' class="text-gray-900 dark:text-white font-sm text-lg">S'insrire</a>
-                                    </div>
-                                </div>
-                                END);
-        }
+
+
+
 
         $hash = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
 
