@@ -6,6 +6,12 @@ class LogConnAction extends Action {
 
     public function execute()
     {
+
+        // si l'utilisateur est deja co, on va sur son compte
+        if (isset($_SESSION['loggedUser'])){
+            header("Location: ?action=compte");
+            return;
+        }
         require_once 'src/views/Header.php';
 
        $html = <<<END
