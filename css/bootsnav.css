@@ -348,15 +348,15 @@ body{
 }
 
 body.on-side{
-    margin-left: -280px;
+    margin-left: -550px;
 }
 
 .side{
     position: fixed;
     overflow-y: auto;
     top: 0;
-    right: -280px;
-    width: 280px;
+    right: -300px;
+    width: 300px;
     padding: 25px 15px;
     height: 100%;
     display: block;

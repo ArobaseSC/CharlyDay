@@ -93,7 +93,7 @@ HEAD;
                                 </div>
                                 <hr> </div>
                         </div>
-                        <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Passer commande</a> </div>
+                        <div class="col-12 d-flex shopping-box"><a href="?action=checkout" class="ml-auto btn hvr-hover">Passer commande</a> </div>
                     </div>
         
                 </div>
