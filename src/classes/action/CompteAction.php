@@ -48,7 +48,7 @@ END;
 
             $html.= <<<END
                 <li>
-                    <div class="product">
+                    <div class="compte_product">
                         <div>
                             <img src="images/{$produit->id}.jpg" alt="image produit">
                             <p>$produit->nom</p>
