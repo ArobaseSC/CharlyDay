@@ -18,3 +18,10 @@ ArobaseStudentCorporation
 4. Afficher le panier
 5. Création d'un nouveau compte
 6. Accès avec authentification
+
+
+## Libraries
+
+* Eloquent
+* BootStrap
+* Jquery
