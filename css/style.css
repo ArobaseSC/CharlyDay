@@ -2575,6 +2575,63 @@
     }
 }
 
+/*---------------------Compte----------------*/
+
+.account-container {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.personal-info,
+.favorites,
+.order-history {
+    width: 30%;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.personal-info h2,
+.favorites h2,
+.order-history h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.favorites ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.favorites li {
+    margin-bottom: 10px;
+}
+
+.order-history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-history th,
+.order-history td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-history th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
 
 
 
