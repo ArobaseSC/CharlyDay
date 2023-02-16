@@ -58,7 +58,6 @@
                     <li class="nav-item"><a class="nav-link" href="">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="?action=about-us">A propos</a></li>
                     <li class="nav-item"><a class="nav-link" href="?action=shop">Boutique</a></li>
-                    <li class="nav-item"><a class="nav-link" href="?action=contact">Contact</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
