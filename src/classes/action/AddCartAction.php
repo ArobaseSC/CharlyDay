@@ -11,12 +11,12 @@ class AddCartAction extends Action
     public function execute(): string
     {
 
-        $id = $_GET['id'];
+        $id_product = $_GET['id_product'];
 
         $html = "ajout d'un produit dans le panier";
 
         CartManager::loadCart();
-        $produit = Produit::where("id", "=", $id)->first();
+        $produit = Produit::where("id", "=", $id_product)->first();
         CartManager::addProduct($produit);
         CartManager::saveCart();
 
