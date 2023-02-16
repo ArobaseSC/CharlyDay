@@ -24,29 +24,35 @@ class CompteAction extends Action
                     </div>
                 </div>
                 <div class="Favori_product">
-                    <h2>Produit Favori</h2>
-                    <div>
+                <h2>Produit Favori</h2>
+END;
+
+            $html.= <<<END
+                    <div class="product">
                         <div>
                             <img src="https://www.lesjardinsdegaia.com/1210-large_default/lot-de-2-figurines-de-jardin-les-2-amoureux.jpg" alt="image produit">
                             <p>nom du produit</p>
                             <p>prix du produit</p>
                         </div>
                     </div>
+END;
+            $html.= <<<END
                 </div>
-                
                 <div class="CommandHistory">
                     <h2>Historique des commandes</h2>
-                    <div>
-                        <div>
-                            <p>date de la commande</p>
-                            <p>nom du produit</p>
-                            <p>prix du produit</p>
+END;
+            $html.= <<<END
+                        <div class="command">
+                            <div>
+                                <p>date de la commande</p>
+                                <p>nom du produit</p>
+                                <p>prix du produit</p>
+                            </div>
                         </div>
-                    </div>
+END;
+            $html.= <<<END
                 </div>
-            </div>
-                    
-        
+            </div>      
 END;
             echo $html;
             require_once 'src/views/Footer.php';
