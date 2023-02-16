@@ -164,10 +164,6 @@ END;
                                     <input type="hidden" name="page" value="0">
                     END;
 
-        if ($numCategorie != 0) {
-            $html .= "<input type='hidden' name='categorie' value='{$_GET['categorie']}'>";
-        }
-
         $html .= <<<END
                                     <input class="form-control" placeholder="Search here..." type="text" name="searchBar">
                                     <button type="submit"> <i class="fa fa-search"></i> </button>
