@@ -609,17 +609,11 @@
      display: block;
 	 padding: 6px 25px;
 }
-
- nav.navbar.bootsnav ul.navbar-nav li.dropdown ul.dropdown-menu li a:hover{
-	 
- }
  nav.navbar.bootsnav li.dropdown ul.dropdown-menu{
      left: auto;
 }
 .custom-select-box .dropdown-item{
 	padding: 5px 10px;
-}
- .btn-cart{
 }
  .cart-list h6 a{
      font-size: 16px;
@@ -1260,35 +1254,6 @@
  .ins-inner-box{
      position: relative;
 }
- .hov-in{
-     opacity: 0;
-     background: rgba(211,59,51, 0.5);
-     bottom: -100%;
-     position: absolute;
-     width: 100%;
-     height: 100%;
-     -webkit-transition: all 0.3s ease-out 0.5s;
-     -moz-transition: all 0.3s ease-out 0.5s;
-     -o-transition: all 0.3s ease-out 0.5s;
-     -ms-transition: all 0.3s ease-out 0.5s;
-     transition: all 0.3s ease-out 0.5s;
-     text-align: center;
-     display: table;
-}
- .hov-in a{
-     display: table-cell;
-     vertical-align: middle;
-     height: 100%;
-}
- .hov-in i{
-     color: #000000;
-     font-size: 48px;
-     position: relative;
-     z-index: 2;
-}
- .hov-in a i:hover{
-     color: #ffffff;
-}
  .ins-inner-box:hover .hov-in{
      bottom: 0;
      opacity: 1;
@@ -1658,122 +1623,6 @@
 .service-block-inner:hover p{
 	color: #ffffff;
 	transition: all 0.5s ease 0s;
-}
-
- .our-team{
-     box-shadow: 0 0 0 rgba(0, 0, 0, 0.3);
-     overflow: hidden;
-     position: relative;
-     transition: all 0.3s ease 0s;
-}
- .our-team:hover{
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
- .our-team img{
-     width: 100%;
-     height: auto;
-     transition: all 0.3s ease-in-out 0s;
-}
- .our-team:hover img{
-     opacity: 0.5;
-}
- .our-team .team-content{
-     color: #000;
-     opacity: 1;
-     position: absolute;
-     bottom: 0px;
-     left: 0px;
-	 background: #ffffff;
-	 padding-left: 55px;
-	 width: 100%;
-     transition: all 0.3s ease 0s;
-}
- .our-team .title{
-     display: block;
-     font-size: 20px;
-     font-weight: 700;
-     margin: 0 0 7px 0;
-}
- .our-team .post{
-     display: block;
-     font-size: 15px;
-}
- .our-team .social{
-     list-style: none;
-     padding: 0;
-     margin: 0;
-     width: 35px;
-     text-align: center;
-     opacity: 0;
-     position: absolute;
-     bottom: 35px;
-	 right: 0px;
-     transition: all 0.3s ease 0s;
-}
- .our-team:hover .social{
-     opacity: 1;
-}
- .our-team .social li{
-     display: block;
-}
- .our-team .social li a{
-     display: inline-block;
-     width: 35px;
-     height: 35px;
-     line-height: 35px;
-     background: #000000;
-     font-size: 17px;
-     color: #fff;
-     opacity: 0.9;
-     position: relative;
-     transform: translate(35px, -35px);
-     transition: all 0.3s ease-in-out 0s 
-}
- .our-team .social li a:hover{
-     width: 35px;
-     background: #6CBE99;
-     transition-delay: 0s;
-}
- .our-team .icon{
-     width: 35px;
-     height: 35px;
-     line-height: 35px;
-     background: #6CBE99;
-     text-align: center;
-     color: #fff;
-     position: absolute;
-     bottom: 0;
-}
- .team-description{
-     padding: 20px 0px;
-}
- .team-description p{
-     font-size: 14px;
-     margin: 0px;
-}
- .hover-team:hover .social{
-     opacity: 1;
-}
- .hover-team:hover .social li:nth-child(1) a{
-     transition-delay: 0.3s;
-}
- .hover-team:hover .social li:nth-child(2) a{
-     transition-delay: 0.2s;
-}
- .hover-team:hover .social li:nth-child(3) a{
-     transition-delay: 0.1s;
-}
- .hover-team:hover .social li:nth-child(4) a{
-     transition-delay: 0.0s;
-}
- .hover-team:hover .social li a{
-     transform: translate(0, 0) 
-}
- .hover-team:hover img{
-     opacity: 0.5;
-}
- .hover-team .team-content .title{
-     border-bottom: 2px solid #6CBE99;
 }
  .shop-box-inner{
      padding: 70px 0px;
@@ -2455,38 +2304,6 @@
 }
  .shop-detail-box-main{
      padding: 70px 0px;
-}
- .single-product-slider .carousel-control-prev {
-     bottom: auto;
-     background: #111111;
-     width: 6%;
-     padding: 10px 0;
-     background-image: none;
-     top: 40%;
-}
- .single-product-slider .carousel-control-next {
-     bottom: auto;
-     background: #111111;
-     width: 6%;
-     padding: 10px 0;
-     background-image: none;
-     top: 40%;
-}
- .single-product-slider .carousel-indicators li img {
-     opacity: 0.5;
-}
- .single-product-slider .carousel-indicators li.active img {
-     opacity: 1;
-}
- .carousel-indicators{
-     position: relative;
-     bottom: 0;
-     background: #000000;
-}
- .carousel-indicators li{
-     width: 30%;
-     height: 100%;
-     cursor: pointer;
 }
  .single-product-details h2{
      color: #000000;
