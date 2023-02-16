@@ -117,8 +117,7 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-            <a href="https://html.design/">html design</a></p>
+        <p class="footer-company">Tous droits reservés. &copy; 2023 <a href="#">ArobaseStudentCorporation</a></p>
     </div>
     <!-- End copyright  -->
 

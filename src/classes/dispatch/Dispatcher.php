@@ -14,6 +14,7 @@ use Application\action\AddCartAction;
 use Application\action\CartAction;
 
 use Application\action\RemoveCartAction;
+use Application\action\ValidateCart;
 use Application\action\ViewProductAction;
 
 use Application\action\ShopAction;
@@ -72,6 +73,10 @@ class Dispatcher
                 break;
             case 'remove_cart':
                 $act = new RemoveCartAction();
+                $act->execute();
+                break;
+            case 'checkout':
+                $act = new ValidateCart();
                 $act->execute();
                 break;
             default:
