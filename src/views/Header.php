@@ -55,10 +55,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">A propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Boutique</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="?action=about-us">A propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="?action=shop">Boutique</a></li>
+                    <li class="nav-item"><a class="nav-link" href="?action=contact">Contact</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
