@@ -81,7 +81,7 @@ END;
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist">Ajouter au panier</a></li>
                                                                 
-                                                                <li><a href="?action=add-star&id_produit={$produit->id}" class="star"><input type="checkbox" checked></a></li>
+                                                                <li><a href="?action=add-star&id_produit={$produit->id}" class="star"></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
