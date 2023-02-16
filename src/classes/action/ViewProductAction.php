@@ -66,7 +66,7 @@ class ViewProductAction extends Action {
                                 <div class="cart-and-bay-btn">
                                     <button type="submit" class="btn hvr-hover" style="color: white; font-weight: 700"><a>Ajouter au panier</a></button>
                      
-                                    <a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Ajouté aux favoris</a>
+                                    <a class="btn hvr-hover" href="?action=add-star&id_produit=$produit->id"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
                                 </div>
                             </div>
 						</form>

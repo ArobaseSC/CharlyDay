@@ -22,7 +22,7 @@ class ValidateCart extends Action
             CartManager::loadCart();
             $carts = CartManager::getCart();
 
-            $date = date('d/m/Y', strtotime($_POST['date']));
+            $date = $_POST['date'];
 
             foreach ($carts as $cart){
                 $produit = $cart->__get('produit');
